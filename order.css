@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navigation Bar */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    background: linear-gradient(135deg, #5c3509 0%, #3e2606 100%), url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+    background-repeat: repeat;
+    background-blend-mode: overlay;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+ul.navbar {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+}
+
+ul.navbar li {
+    margin: 0 30px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap');
+
+ul.navbar li a {
+    color: #f9e6ce;
+    font-size: 18px;
+    font-family: 'Playfair Display', serif;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
+    display: block;
+    width: 100px;
+    text-align: center;
+    padding: 10px 0;
+}
+
+ul.navbar li a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #7c0000;
+    transition: width 0.3s ease;
+}
+
+ul.navbar li a:hover {
+    color: #ffffff;
+}
+
+ul.navbar li a:hover::after {
+    width: 100%;
+}
+
+/* Heading */
+h1 {
+    font-family: 'Calligrapher', cursive;
+    font-size: 55px;
+    color: #fff8e1;
+    text-align: center;
+    margin: 120px 0 40px;
+    text-shadow: 2px 2px 5px #000000;
+}
+
+/* Form Container */
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Table Styling */
+table {
+    font-family: 'Calibri', sans-serif;
+    color: #fff8e1;
+    background: rgba(75, 46, 23, 0.95);
+    border-collapse: collapse;
+    border: 3px solid #4b2e17;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+}
+
+table td {
+    padding: 12px 20px;
+    font-size: 18px;
+}
+
+/* Input Fields */
+table input[type="text"],
+table input[type="email"] {
+    padding: 10px;
+    width: 250px;
+    border: 2px solid #3b240b;
+    border-radius: 6px;
+    font-size: 16px;
+    background-color: #fff9f0;
+    color: #3b240b;
+}
+
+/* Buttons */
+table input[type="submit"] {
+    background-color: #6a3e1a;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    margin: 10px 5px 0 5px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+table input[type="submit"]:hover {
+    background-color: #4b2e17;
+}
+
+/* Body Background */
+body {
+    background: linear-gradient(160deg, #6e4f2f, #2c1d10);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-bottom: 100px;
+}

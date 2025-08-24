@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FG Order</title>
+    <link rel="stylesheet" href="order.css">
+
+</head>
+<body>
+
+<nav>
+  <ul class="navbar">
+    <li><a href="Home.html">Home</a></li>
+    <li><a href="EAT.html">Eat</a></li>
+    <li><a href="DRINK.html">Drink</a></li>
+    <li><a href="About.html" class="active">About Us</a></li>
+    <li><a href="Contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<h1>Order Your Meal</h1>
+
+<form method="post" action="Order.php">
+    <div class="form-container">
+    <table>
+        <tr>
+            <td>Name:</td>
+            <td><input type="text" name="name" placeholder="Lahiru Lakmal" required></td>
+        </tr>
+        <tr>
+            <td>Address:</td>
+            <td><input type="text" name="address" placeholder="8/2 Queen Road, Polgolla" required></td>
+        </tr>
+        <tr>
+            <td>Mobile:</td>
+            <td><input type="text" name="mobile" placeholder="070154638" required></td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td><input type="email" name="email" placeholder="abcd123@gmail.com"></td>
+        </tr>
+        <tr>
+            <td>Order 1:</td>
+            <td><input type="text" name="order1" placeholder="Kottu"></td>
+        </tr>
+        <tr>
+            <td>Order 2:</td>
+            <td><input type="text" name="order2" placeholder="Fried Rice"></td>
+        </tr>
+        <tr>
+            <td>Order 3:</td>
+            <td><input type="text" name="order3" placeholder="Noodles"></td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align: center;">
+                <input type="submit" value="Save" name="save">
+                <input type="submit" value="Update" name="update">
+                <input type="submit" value="Delete" name="delete">
+            </td>
+        </tr>
+    </table>
+    </div>
+</form>
+
+</body>
+</html>

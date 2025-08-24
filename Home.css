@@ -1,0 +1,746 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+  padding-top: 60px; 
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
+
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.7), 
+      rgba(255, 255, 255, 0.6)   
+    ),
+    url('kottu.jpg') center/cover no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-blend-mode: lighten;
+  color: #3b240b; 
+
+  animation: zoomBackground 30s ease-in-out infinite alternate;
+
+}
+
+@keyframes zoomBackground {
+  0% {
+    background-size: 100%;
+  }
+  50% {
+    background-size: 110%;
+  }
+  100% {
+    background-size: 100%;
+  }
+}
+
+
+/*Background Image and Animation*..........................*/
+
+#background {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#background::before {
+    content: '';
+    position: absolute;
+    top: -5%;
+    left: -5%;
+    width: 110%;
+    height: 110%;
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.6),
+        rgba(124, 0, 0, 0.5)
+    ), url('kottu.jpg') center/cover no-repeat;
+    animation: zoomFade 8s ease-in-out infinite, floatOverlay 8s linear infinite;
+    z-index: 0;
+    transform-origin: center;
+}
+
+#background-content {
+    position: relative;
+    z-index: 1;
+    color: white;
+}
+
+@keyframes zoomFade {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes floatOverlay {
+    0% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(10px, 10px);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+/*...............................................................*/
+
+
+/*Navigation Bar*..........................*/
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color:#5a0c0c0f;
+  }
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+
+  background: linear-gradient(135deg, #5c3509 0%, #3e2606 100%), 
+              url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+  background-repeat: repeat;
+  background-blend-mode: overlay;
+
+  padding: 8px 0;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.5);
+
+  /* arch-like carved curve */
+  border-bottom-left-radius: 100px 40px;
+  border-bottom-right-radius: 100px 40px;
+}
+
+
+ul.navbar {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    margin: 0;
+}
+
+ul.navbar li {
+    margin: 0 30px;
+}
+
+/*navigation text style*/
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap');
+ul.navbar li a {
+    color: #f9e6ce;
+    font-size: 18px;
+    font-family: 'Playfair Display', serif;
+    text-decoration: none;
+    position: relative;
+    transition: all 0.3s ease;
+    display: block;
+    width: 120px;          /* wider, like a wooden piece */
+    text-align: center;
+    padding: 12px 0;
+    margin: 0 8px;
+    box-sizing: border-box;
+
+    /* wood background effect */
+    background: linear-gradient(145deg, #5c3509, #3e2606);
+    background-blend-mode: overlay;
+    border: 2px solid #3e2606;
+    border-radius: 8px;  /* slightly rounded edges like carved wood */
+
+    /* subtle shadow for depth */
+    box-shadow: 2px 4px 6px rgba(0,0,0,0.5), inset -2px -2px 6px rgba(255,255,255,0.1);
+}
+
+
+ul.navbar li a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #7c0000;
+    transition: width 0.3s ease;
+}
+
+ul.navbar li a:hover {
+    background: linear-gradient(145deg, #7a4710, #4a2d07);
+    color: #ffffff;
+    box-shadow: 3px 6px 10px rgba(0,0,0,0.6), inset 0px 0px 6px rgba(255,255,255,0.2);
+    transform: translateY(-2px); /* lift effect */
+}
+
+ul.navbar li a:active {
+    background: linear-gradient(145deg, #3e2606, #2a1904);
+    transform: translateY(2px);
+    box-shadow: inset 2px 2px 6px rgba(0,0,0,0.6);
+}
+
+ul.navbar li a:hover::after {
+    width: 100%;
+}
+
+nav{
+  position: fixed;
+  width: 100%;
+  margin-top: 0;
+}
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover {
+    background-color: #000000;
+  }
+/*...............................................................*/
+
+.heading{
+    text-align: center;
+    color: rgb(255, 255, 255);
+    padding-top: 180px;
+    padding-top: 100px;
+    
+}
+
+.heading h1 {
+    font-size: 100px;
+    font-family: "Rowdies", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #eed8bb; /* light creamy wood color */
+    text-shadow: 2px 2px 4px #4b2e0f; /* dark brown shadow for wood depth */
+    transition: transform 0.4s ease, color 0.4s ease, text-shadow 0.4s ease;
+    cursor: pointer;
+}
+
+.heading h1:hover {
+    transform: scale(1.1);
+    color: #c49e57; /* warm golden brown */
+    text-shadow: 
+      0 0 8px #c49e57,
+      0 0 15px #7a4a0e,
+      0 0 20px #5a3200;
+}
+
+
+.come{
+  margin: 30px;
+  font-size: 50px;
+  font-family: Matura MT Script Capitals;
+}
+
+.E{
+  margin: 70px auto 0;
+  margin-top: 50px;
+}
+
+
+.food a{
+  width: 150px;
+  text-decoration: none;
+  display: inline-block;
+  margin: 40px;
+  padding: 12px 0;
+  color: aliceblue;
+  border: 3px solid;
+  position: relative;
+  z-index: 1;
+  transition: color 0.5s;
+  
+}
+
+.food a:hover span{
+  width: 100%;
+}
+.food a:hover {
+  color: rgb(0, 0, 0);
+}
+
+
+.welcome1{
+  margin: 50px;
+}
+
+.welcome1 h1{
+  font-size: 50px;
+  font-family: Calligrapher;
+  text-align: center;
+  margin: 25px;
+  border-style: solid;
+  border-width: 3px;
+  border-radius: 20px;
+  border-color: #7c0000;
+}
+
+.welcome{
+  font-size: 55px;
+  text-align: center;
+  line-height: 2.6;
+}
+
+/*EAT*..............................................*/
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap');
+
+.eat {
+  margin: 50px auto;
+  text-align: center;
+  font-size: 48px;
+  font-weight: 700;
+  font-family: 'Merriweather', serif;
+  background: linear-gradient(to right, #d9a75f, #8b5c1d); /* warm wood-tones */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow:
+    1px 1px 4px rgba(0, 0, 0, 0.6),
+    2px 2px 8px rgba(0, 0, 0, 0.4);
+
+  animation: fadeInDown 1s ease-in-out;
+}
+/*eat end..............................................*/
+
+
+.food2 {
+  display: inline-block;
+  border: 2px solid #4b2e0f; /* deep brown for wood tone */
+  margin: 5px;
+  border-radius: 15px;
+  padding: 10px;
+  background: 
+      linear-gradient(170deg, #5c3509 0%, #cf9c59 100%),  
+      url('https://www.transparenttextures.com/patterns/wood-pattern.png'); 
+  background-blend-mode: multiply;
+  background-repeat: repeat;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.food2:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* --- Image overlay effect --- */
+.img-container {
+  position: relative;
+  width: 400px;
+  height: 280px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.img-container img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+
+
+/* Override for drink images to keep original size */
+.img-container.drink-img {
+    width: 250px;
+    height: 250px;
+}
+
+/* Overlay fits the image exactly */
+.img-container.drink-img .overlay {
+    width: 250px;
+    height: 250px;
+    border-radius: 10px; /* same as image corners */
+}
+
+
+/* Hidden overlay */
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(92, 53, 9, 0.8); /* dark wood overlay */
+  color: #f9e6ce;
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Show description on hover */
+.img-container:hover .overlay {
+  opacity: 1;
+}
+
+
+/*Text style in food identy.....................................*/
+.food2 .b{
+  padding: 10px;
+  text-align: center;
+  text-shadow: #111;
+  font-family: Calligrapher;
+  color: #fff;
+  font-size: 20px;
+}
+/*
+
+
+
+/*BUTTON in home.......................................*/
+.fancy-btn {
+  display: inline-block;
+  padding: 15px 30px;
+  margin: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #f3e5d0;
+  background: 
+    linear-gradient(145deg, #804a1a, #5c3615), 
+    url('https://www.transparenttextures.com/patterns/wood-pattern.png'); 
+  background-blend-mode: multiply;
+  background-repeat: repeat;
+  border: 2px solid #1d1206; 
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.fancy-btn:hover {
+  background: 
+    linear-gradient(145deg, #804a1a, #5c3615),
+    url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+  background-blend-mode: multiply;
+  color: #ffd7a3; 
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
+}
+
+/*Button end......................................*/
+
+
+/* Responsive full width on small screens */
+@media (max-width: 600px) {
+  .fancy-btn {
+    display: block;
+    width: 80%;
+    margin: 10px auto;
+    text-align: center;
+  }
+}
+
+
+.food2 img{
+  border-radius: 10px;
+  
+}
+
+/* Price section styling ...........................*/
+.price {
+  background: 
+    linear-gradient(145deg, #a86b2d, #5c3b1b),
+    url('https://www.transparenttextures.com/patterns/wood-pattern.png'); /* wood texture */
+  background-blend-mode: multiply;
+  background-repeat: repeat;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  text-align: center;
+  color: #f9e5c1; /* light cream for contrast */
+  font-family: 'Merriweather', serif;
+  padding: 10px 0;
+  box-shadow: inset 0 -2px 5px rgba(0, 0, 0, 0.3);
+}
+
+
+/*food1 background*..................*/
+#food1 {
+  width: 100%;
+  padding: 70px 0;
+  background: 
+    linear-gradient(135deg, #560202 0%, #3a0101 100%), /* dark red gradient */
+    url('https://www.transparenttextures.com/patterns/wood-pattern.png'); /* wood texture */
+  background-repeat: repeat;
+  background-blend-mode: overlay;
+  color: #eed8bb; /* warm text color */
+  box-shadow: inset 0 0 50px rgba(0,0,0,0.7);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border-radius: 15px;
+  margin: 20px 0;
+  transition: background 0.5s ease;
+}
+
+#food1:hover {
+  background: 
+    linear-gradient(135deg, #7a0c0c 0%, #330202 100%), 
+    url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+  background-repeat: repeat;
+  background-blend-mode: overlay;
+  box-shadow: inset 0 0 70px rgba(0,0,0,0.9);
+}
+
+/*food1 end..................................*/
+
+.drink{
+  margin: 50px;
+  text-align: center;
+  color: #000000;
+  text-shadow: 3px 3px 5px rgb(168, 255, 182),-2px -2px 10px rgb(0, 82, 37);
+
+}
+
+#food4{
+  width: 100%;
+  padding: 70px 0;
+  background: #000000;
+}
+
+
+.food3{
+  display:inline-block ;
+  border: 2px solid rgb(0, 0, 0);
+  margin: 5px ;
+  border-radius: 10px;
+ }
+
+
+.food3 .b{
+  padding: 10px;
+  text-align: center;
+  font-family: Calligrapher;
+  text-shadow: #111;
+  color: #fff;
+}
+
+.food3:hover{
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 15px;
+  transform: scale(0.9,0.9);
+  transition: 0.1s ease-in-out;
+  box-shadow: 0 10px 10px 0;
+}
+ 
+.food3 img{
+  border-radius: 10px;
+}
+
+
+#putter{
+
+  background: #000000;
+}
+
+.Contact{
+  text-align: center;
+  margin: 100px;
+
+
+}
+
+.Contact h1{
+  font-size: 50px;
+  font-family: Calligrapher;
+  margin: 25px;
+  text-shadow: 3px 3px 5px rgb(168, 255, 182),-2px -2px 10px rgb(0, 82, 37);
+  
+}
+
+.Contact p{
+    font-size: 50px;
+}
+
+.margin{
+  margin: 50px;
+  font-size: 30px;
+  }
+
+.border{
+  border-style: solid;
+  border-width: 5px;
+  border-radius: 5px;
+  border-color: #0000007a;
+ }
+ .border:hover{
+  transform: scale(0.9,0.9);
+  transition: 0.1s ease-in-out;
+  box-shadow: 0 10px 10px 0;
+ }
+
+.about{
+  text-align: center;
+}
+
+.about h1{
+  font-size: 50px;
+  font-family: Calligrapher;
+  margin: 35px;
+  text-shadow: 3px 3px 5px rgb(92, 92, 92),-2px -2px 10px rgb(0, 82, 37);
+
+}
+
+.about h2{
+  font-size: 40px;
+  margin: 25px;
+}
+.about1{
+  font-size: 30px;
+  margin: 25px;
+}
+  
+#footer{
+  width: 100%;
+  padding: 70px 0;
+  background: #000000;
+
+}
+
+.thank{
+  text-align: center;
+
+}
+
+.title{
+  display:flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.drink3{
+  display:flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.drink4{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/*order button.........................................*/
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  margin: 20px auto;
+  font-size: 26px;
+  padding: 15px 35px;
+  font-family: 'Merriweather', serif;
+  text-align: center;
+  color: #f4e7d0;
+  background: 
+    linear-gradient(145deg, #a86b2d, #5c3b1b),
+    url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+  background-blend-mode: multiply;
+  border: 4px solid #3e260f;
+  border-radius: 20px 50px 20px 50px; /* Plaque-like curve */
+  box-shadow:
+    inset 0 2px 5px rgba(255, 255, 255, 0.1), /* top glow */
+    inset 0 -3px 5px rgba(0, 0, 0, 0.2),       /* bottom inset */
+    0 10px 20px rgba(60, 30, 10, 0.5);         /* outer drop shadow */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+  letter-spacing: 1px;
+}
+
+.button:hover {
+  background: 
+    linear-gradient(145deg, #b87733, #4a2d13),
+    url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+  color: #ffe7c4;
+  transform: scale(1.07);
+  box-shadow:
+    inset 0 1px 4px rgba(255, 255, 255, 0.1),
+    inset 0 -3px 6px rgba(0, 0, 0, 0.25),
+    0 12px 24px rgba(80, 40, 10, 0.6);
+}
+/* button end.........................................*/
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* About site................................................. */
+
+.about-section {
+    padding: 80px 40px;
+  
+    font-family: 'Poppins', sans-serif;
+}
+
+.about-container {
+    max-width: 1000px;
+    margin: auto;
+    background-color: rgba(255, 255, 255, 0.8); /* keeps text readable */
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Animation */
+.about-container:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3), 0 0 15px #c29b74;
+    border: 1px solid #c29b74;
+}
+
+
+
+.about-title {
+    text-align: center;
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #4b2e17;
+}
+
+.about-subtitle {
+    text-align: center;
+    font-size: 24px;
+    color: #734c2a;
+    margin-bottom: 30px;
+}
+
+.about-content {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #3c2b1c;
+}
+
+.Contact P,
+.Contact p,
+.about-title{
+    text-align: center;
+  margin: 10px 0;
+}
